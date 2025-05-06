@@ -10,8 +10,8 @@ spec:
   accessModes:
     - ReadWriteMany
   nfs:
-    path:  /srv/nfs/roseaw         #local reference change this!!!!
-    server: 10.48.10.140
+    path:  /srv/nfs/knauwq         #local reference change this!!!!
+    server: 10.48.10.201
   persistentVolumeReclaimPolicy: Retain
 ---
 apiVersion: v1
@@ -46,7 +46,7 @@ spec:
     spec:
       containers:
         - name: flask
-          image: cithit/roseaw:latest   #<------change this!!!!!
+          image: cithit/knauwq:latest   #<------change this!!!!!
           ports:
             - containerPort: 5000
           volumeMounts:
@@ -63,7 +63,7 @@ metadata:
   name: flask-service
 spec:
   type: LoadBalancer 
-  loadBalancerIP: 10.48.10.116              #<------change this!!!!                       
+  loadBalancerIP: 10.48.10.201             #<------change this!!!!                       
   ports:
   - protocol: TCP
     port: 80
